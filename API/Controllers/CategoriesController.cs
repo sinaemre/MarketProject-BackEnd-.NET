@@ -61,7 +61,7 @@ namespace API.Controllers
         public async Task<IActionResult> CreateCategory([FromForm]CreateCategoryDTO model)
         {
             if (model == null)
-                return BadRequest("Bir şeyler ters gitti!");
+                return BadRequest("Bi şeyler ters gitti!");
 
             if (await _categoryRepo.AnyAsync(x => x.Name == model.Name))
                 return BadRequest("Bu isimde bir kategori var. Farklı bir isim seçiniz!");
